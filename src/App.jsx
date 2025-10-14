@@ -218,31 +218,36 @@ function App() {
             </div>
           </div>
 
+        <div style={{ margin: '24px 0', textAlign: 'center', fontWeight: 'bold', fontSize: '1.2em', color: '#2c3e50' }}>
+          Vote for Husband & Wife
+        </div>
+
           {/* Candidate Information Section */}
-          <div className="candidate-info-container" style={{ color: 'white' }}>
-            <div className="candidate-card left-candidate" style={{ color: 'white' }}>
-              <h3>মোঃ হাবিবুর রহমান</h3>
-              <p>কেন্দ্রীয় নির্বাহী সদস্য পদপার্থী</p>
-              <p className="ballot-number">ব্যালট নং - ১৯</p>
+          <div className="candidate-info-container" style={{ display: 'flex', justifyContent: 'space-between', marginTop: '32px' }}>
+            <div className="candidate-card left-candidate" style={{ background: '#eaf6fb', padding: '16px', borderRadius: '6px', width: '48%' }}>
+              <h3 style={{ margin: '0 0 8px 0', color: '#222' }}>মোঃ হাবিবুর রহমান</h3>
+              <h3 style={{ fontWeight: 'bold', margin: '0 0 8px 0', color: '#222' }}>কেন্দ্রীয় নির্বাহী সদস্য</h3>
+              <p className="ballot-number" style={{ color: '#2c3e50', margin: 0 }}>ব্যালট নং - ১৯</p>
             </div>
-            <div className="candidate-card right-candidate" style={{ color: 'white' }}>
-              <h3>সানজিদা আক্তার</h3>
-              <p>মন্নুজান হল বিতর্ক সম্পাদক</p>
-              <p className="ballot-number">ব্যালট নং - ১</p>
+            <div className="candidate-card right-candidate" style={{ background: '#fdf6e3', padding: '16px', borderRadius: '6px', width: '48%' }}>
+              <h3 style={{ margin: '0 0 8px 0', color: '#222' }}>সানজিদা আক্তার</h3>
+              <h3 style={{ margin: '0 0 8px 0', color: '#222' }}>মন্নুজান হল বিতর্ক সম্পাদক</h3>
+              <p className="ballot-number" style={{ color: '#2c3e50', margin: 0 }}>ব্যালট নং - ১</p>
             </div>
           </div>
         </div>
       )}
 
-      <div>
+
+      {/* <div>
+        Developed by <a href="https://www.linkedin.com/in/pipra--/" target="_blank" rel="noopener noreferrer">Habibur Rahman</a> & <a href="https://www.linkedin.com/in/shuvo-roy-596814267/" target="_blank" rel="noopener noreferrer"> Shuvo Roy</a> 
+
+      </div> */}
+      {/* Always show copyright */}
+      <div style={{ marginTop: '32px', textAlign: 'center', color: '#888', fontSize: '0.95em' }}>
         &copy; {new Date().getFullYear()} RUCSU Voter Search
       </div>
     </div>
   )
 }
-/* In App.css, add:
-.app-container, .app-container * {
-  color: white !important;
-}
-*/
 export default App
