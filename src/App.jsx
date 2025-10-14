@@ -10,7 +10,7 @@ function App() {
 
   // Load the student data from RUCSU_VOTER.txt
   useEffect(() => {
-    fetch('/src/assets/RUCSU_VOTER.txt')
+    fetch('/RUCSU_VOTER.txt')
       .then(response => response.text())
       .then(text => {
         // Parse the JSON-like data
@@ -85,6 +85,28 @@ function App() {
     return hallMap[code] || '--'
   }
 
+  const pollingCenterBanglaName = (code) => {
+    const hallMap = {
+      '101': 'সত্যেন্দ্রনাথ বসু বিজ্ঞান ভবন, গ্যালারী রুম-১২৯',
+      '102': 'জুবেরী ভবন, পশ্চিম হল রুম',
+      '103': 'জামাল নজরুল ইসলাম বিজ্ঞান ভবন, উত্তর-পশ্চিম, রুম-১০৯',
+      '104': 'জুবেরী ভবন, পূর্ব হল রুম',
+      '105': 'জাবির ইবনে হাইয়ান বিজ্ঞান ভবন, রুম-১০১',
+      '106': 'জাবির ইবনে হাইয়ান বিজ্ঞান ভবন, রুম-২২৪',
+      '107': 'সত্যেন্দ্রনাথ বসু বিজ্ঞান ভবন, রুম-১১২',
+      '108': 'জগদীশ চন্দ্র বসু বিজ্ঞান ভবন, দক্ষিণ-পূর্ব গেট, রুম-১৫০',
+      '109': 'জগদীশ চন্দ্র বসু বিজ্ঞান ভবন, দক্ষিণ-পশ্চিম গেট, রুম-১২১',
+      '110': 'ড. শহীদুল্লাহ কলা ভবন, গ্যালারী রুম-১৫০',
+      '111': 'জামাল নজরুল ইসলাম বিজ্ঞান ভবন, কনফারেন্স রুম-১৩৭',
+      '120': 'ডীনস কমপ্লেক্স, রুম-১১০(ক্যান্টিন)',
+      '121': 'সৈয়দ ইসমাঈল হোসেন সিরাজী ভবন, উত্তর-পশ্চিম গেট, রুম-১২৫',
+      '122': 'রবীন্দ্র ভবন, উত্তর পশ্চিম গেট, রুম-২৪৪',
+      '123': 'রবীন্দ্র ভবন, পূর্ব-দক্ষিণ গেট, রুম-১১৯',
+      '124': 'রবীন্দ্র ভবন, দক্ষিণ-পশ্চিম গেট, রুম-১২৩',
+      '125': 'সৈয়দ ইসমাঈল হোসেন সিরাজী ভবন, উত্তর-পশ্চিম গেট, রুম-১২৮',
+    }
+    return hallMap[code] || '--'
+  }
   
   const handleSearch = () => {
     setError('')
@@ -121,7 +143,7 @@ function App() {
     <div className="app-container">
       <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', margin: '' }}>
         <img
-          src="/src/assets/RU_Official_Logo.png"
+          src="/RU_Official_Logo.png"
           alt="RU Official Logo"
           style={{ width: '200px', height: '200px', objectFit: 'contain' }}
         />
@@ -182,27 +204,45 @@ function App() {
             </div>
             <div className="detail-row">
               <span className="label">Hall Name:</span>
-              <span className="value">{hallCodeToName(studentId.substring(2, 5))}</span>
+              <span className="value">
+                {hallCodeToName(studentId.substring(2, 5))}
+              </span>
             </div>
-             <div className="detail-row">
+            <div className="detail-row">
               <span className="label">Polling Center:</span>
-              <span className="value">{pollingCenterName(studentId.substring(2, 5))}</span>
+              <span className="value">
+                {pollingCenterName(studentId.substring(2, 5))}
+                <br />
+                {pollingCenterBanglaName(studentId.substring(2, 5))}
+              </span>
+            </div>
+          </div>
+
+          {/* Candidate Information Section */}
+          <div className="candidate-info-container" style={{ color: 'white' }}>
+            <div className="candidate-card left-candidate" style={{ color: 'white' }}>
+              <h3>মোঃ হাবিবুর রহমান</h3>
+              <p>কেন্দ্রীয় নির্বাহী সদস্য পদপার্থী</p>
+              <p className="ballot-number">ব্যালট নং - ১৯</p>
+            </div>
+            <div className="candidate-card right-candidate" style={{ color: 'white' }}>
+              <h3>সানজিদা আক্তার</h3>
+              <p>মন্নুজান হল বিতর্ক সম্পাদক</p>
+              <p className="ballot-number">ব্যালট নং - ১</p>
             </div>
           </div>
         </div>
       )}
 
-    <footer className="footer">
-      <div>
-        Developed by <a href="https://www.linkedin.com/in/pipra--/" target="_blank" rel="noopener noreferrer">Habibur Rahman</a> & <a href="https://www.linkedin.com/in/shuvo-roy-596814267/" target="_blank" rel="noopener noreferrer"> Shuvo Roy</a> 
-
-      </div>
       <div>
         &copy; {new Date().getFullYear()} RUCSU Voter Search
       </div>
-    </footer>
     </div>
   )
 }
-
+/* In App.css, add:
+.app-container, .app-container * {
+  color: white !important;
+}
+*/
 export default App
