@@ -1,19 +1,18 @@
 import { initializeApp } from "firebase/app";
-import {getAuth} from "firebase/auth";
-import { getFirestore } from "firebase/firestore";
-import { getStorage } from "firebase/storage";
-
+import { getAuth } from "firebase/auth";
+import { getDatabase } from "firebase/database";
 const firebaseConfig = {
-  apiKey: "AIzaSyBIOfFug2ACsxXaqQRYnOdSmf7dV6I5dyI",
-  authDomain: "smartserve-583bc.firebaseapp.com",
-  projectId: "smartserve-583bc",
-  storageBucket: "smartserve-583bc.firebasestorage.app",
-  messagingSenderId: "90291054889",
-  appId: "1:90291054889:web:126e28c2c499a9c2696f38"
+  apiKey: "AIzaSyAGB77kvX2BVvbXRcpkD4GmxpofxwzUdSk",
+  authDomain: "rucsu-f56d8.firebaseapp.com",
+  databaseURL: "https://rucsu-f56d8-default-rtdb.asia-southeast1.firebasedatabase.app",
+  projectId: "rucsu-f56d8",
+  storageBucket: "rucsu-f56d8.firebasestorage.app",
+  messagingSenderId: "579119442287",
+  appId: "1:579119442287:web:c1891a71a30aece6f0e09a",
+  measurementId: "G-S8JY6WXHX4"
 };
 
 const app = initializeApp(firebaseConfig);
-export const auth = getAuth();
-export const db = getFirestore();
-export const storage = getStorage();
+export const db = getDatabase(app);
+export const auth = getAuth(app);
 export default app;
