@@ -3,14 +3,14 @@ import { getAuth } from "firebase/auth";
 import { getDatabase } from "firebase/database";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyAuxZyjKBWdg4Shrdic_oJiR8IcQfkyGjw",
-  authDomain: "rucsu-e6a3c.firebaseapp.com",
-  databaseURL: "https://rucsu-e6a3c-default-rtdb.asia-southeast1.firebasedatabase.app",
-  projectId: "rucsu-e6a3c",
-  storageBucket: "rucsu-e6a3c.firebasestorage.app",
-  messagingSenderId: "861765127333",
-  appId: "1:861765127333:web:4e46104d3f4eb66173114c",
-  measurementId: "G-YPSCR8BGL6"
+  apiKey: "AIzaSyDk6WE3T7oZCuuTgpPMKy9WLjT4OXKjpBY",
+  authDomain: "rucsu-backup.firebaseapp.com",
+  databaseURL: "https://rucsu-backup-default-rtdb.asia-southeast1.firebasedatabase.app",
+  projectId: "rucsu-backup",
+  storageBucket: "rucsu-backup.firebasestorage.app",
+  messagingSenderId: "609111563687",
+  appId: "1:609111563687:web:163989dcf94a0ad476aa82",
+  measurementId: "G-XW2DLS50TR"
 };
 
 const app = initializeApp(firebaseConfig);
