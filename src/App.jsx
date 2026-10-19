@@ -60,29 +60,6 @@ function App() {
     return hallMap[code] || "--";
   };
 
-  // const hallCodeToName = (code) => {
-  //   const hallMap = {
-  //     101: "Sher-e Bangla Fazlul Haque Hall",
-  //     102: "Shah Makhdum Hall",
-  //     103: "Nawab Abdul Latif Hall",
-  //     104: "Syed Amer Ali Hall",
-  //     105: "Shaheed Shamsuzzoha Hall",
-  //     106: "Shaheed Habibur Rahman Hall",
-  //     107: "Matihar Hall",
-  //     108: "Madar Bux Hall",
-  //     109: "Shaheed Suhrawardy Hall",
-  //     110: "Shaheed Ziaur Rahman Hall",
-  //     111: "Bijoy 24 Hall (Bangabandhu Sheikh Mujibur Rahman Hall)",
-  //     120: "Mannujan Hall",
-  //     121: "Rokeya Hall",
-  //     122: "Taposhi Rabeya Hall",
-  //     123: "Begum Khaleda Zia Hall",
-  //     124: "Rahamatunnesa Hall",
-  //     125: "July 36 Hall (Bangamata Sheikh Fazilatunnesa Hall)",
-  //   };
-  //   return hallMap[code] || "--";
-  // };
-
   const pollingCenterName = (code) => {
     const hallMap = {
       SB: "Satyendranath Bose Science Building, Gallery Room-129",
@@ -105,29 +82,6 @@ function App() {
     };
     return hallMap[code] || "--";
   };
-
-  // const pollingCenterName = (code) => {
-  //   const hallMap = {
-  //     101: "Satyendranath Bose Science Building, Gallery Room-129",
-  //     102: "Zuberi Building, West Hall Room",
-  //     103: "Jamal Nazrul Islam Science Building, North-West, Room-109",
-  //     104: "Zuberi Building, East Hall Room",
-  //     105: "Jabir Ibn Hayyan Science Building, Room-101",
-  //     106: "Jabir Ibn Hayyan Science Building, Room-224",
-  //     107: "Satyendranath Bose Science Building, Room-112",
-  //     108: "Jagadish Chandra Bose Science Building, South-East Gate, Room-150",
-  //     109: "Jagadish Chandra Bose Science Building, South-West Gate, Room-121",
-  //     110: "Dr. Shahidullah Arts Building, Gallery Room-150",
-  //     111: "Jamal Nazrul Islam Science Building, Conference Room-137",
-  //     120: "Dean’s Complex, Room-110 (Canteen)",
-  //     121: "Syed Ismail Hossain Siraji Building, North-West Gate, Room-125",
-  //     122: "Rabindra Building, North-West Gate, Room-244",
-  //     123: "Rabindra Building, East-South Gate, Room-119",
-  //     124: "Rabindra Building, South-West Gate, Room-123",
-  //     125: "Syed Ismail Hossain Siraji Building, North-West Gate, Room-128",
-  //   };
-  //   return hallMap[code] || "--";
-  // };
 
   const pollingCenterBanglaName = (code) => {
     const hallMap = {
@@ -199,7 +153,7 @@ function App() {
       <div className="search-container">
         <input
           type="number"
-          placeholder="Enter Student ID"
+          placeholder="Enter Student ID (e.g., 2210976107)"
           value={studentId}
           onChange={(e) => setStudentId(e.target.value)}
           onKeyPress={handleKeyPress}
@@ -219,20 +173,6 @@ function App() {
 
       {searchResult && (
         <div className="result-container">
-          {/* <div style={{ textAlign: "center", marginBottom: 16 }}>
-            <img
-              src={"/habibi.jpeg"}
-              alt="Habibi"
-              style={{
-                width: 340,
-                marginLeft: "5px",
-                height: 140,
-                objectFit: "cover",
-                borderRadius: "8px",
-                border: "2px solid #ddd",
-              }}
-            />
-          </div> */}
           <div
             className="candidate-info-container"
             style={{
@@ -242,34 +182,6 @@ function App() {
               marginBottom: "20px",
             }}
           >
-            <div
-              className="candidate-card left-candidate"
-              style={{
-                background: "#eaf6fb",
-                padding: "16px",
-                borderRadius: "6px",
-                width: "48%",
-              }}
-            >
-              <h3 style={{ margin: "0 0 8px 0", color: "#222" }}>
-                মোঃ হাবিবুর রহমান
-              </h3>
-              <h3
-                style={{
-                  fontWeight: "bold",
-                  margin: "0 0 8px 0",
-                  color: "#222",
-                }}
-              >
-                কেন্দ্রীয় নির্বাহী সদস্য (স্বতন্ত্র)
-              </h3>
-              <p
-                className="ballot-number"
-                style={{ color: "#2c3e50", margin: 0 }}
-              >
-                ব্যালট নং - ১৯
-              </p>
-            </div>
           </div>
           <h2>Student Details</h2>
           <div className="student-details">
@@ -314,87 +226,9 @@ function App() {
               </span>
             </div>
           </div>
-
-          {/* <div
-            style={{
-              margin: "24px 0",
-              textAlign: "center",
-              fontWeight: "bold",
-              fontSize: "1.2em",
-              color: "#2c3e50",
-            }}
-          >
-            Vote for Husband & Wife
-          </div> */}
-
-          {/* Candidate Information Section */}
-          {/* <div
-            className="candidate-info-container"
-            style={{
-              display: "flex",
-              justifyContent: "space-between",
-              marginTop: "32px",
-            }}
-          >
-            <div
-              className="candidate-card left-candidate"
-              style={{
-                background: "#eaf6fb",
-                padding: "16px",
-                borderRadius: "6px",
-                width: "48%",
-              }}
-            >
-              <h3 style={{ margin: "0 0 8px 0", color: "#222" }}>
-                মোঃ হাবিবুর রহমান
-              </h3>
-              <h3
-                style={{
-                  fontWeight: "bold",
-                  margin: "0 0 8px 0",
-                  color: "#222",
-                }}
-              >
-                কেন্দ্রীয় নির্বাহী সদস্য
-              </h3>
-              <p
-                className="ballot-number"
-                style={{ color: "#2c3e50", margin: 0 }}
-              >
-                ব্যালট নং - ১৯
-              </p>
-            </div>
-            <div
-              className="candidate-card right-candidate"
-              style={{
-                background: "#fdf6e3",
-                padding: "16px",
-                borderRadius: "6px",
-                width: "48%",
-              }}
-            >
-              <h3 style={{ margin: "0 0 8px 0", color: "#222" }}>
-                সানজিদা আক্তার
-              </h3>
-              <h3 style={{ margin: "0 0 8px 0", color: "#222" }}>
-                মন্নুজান হল বিতর্ক সম্পাদক
-              </h3>
-              <p
-                className="ballot-number"
-                style={{ color: "#2c3e50", margin: 0 }}
-              >
-                ব্যালট নং - ১
-              </p>
-            </div>
-          </div> */}
         </div>
       )}
 
-      {/* <div>
-        Developed by <a href="https://www.linkedin.com/in/pipra--/" target="_blank" rel="noopener noreferrer">Habibur Rahman</a> & <a href="https://www.linkedin.com/in/shuvo-roy-596814267/" target="_blank" rel="noopener noreferrer"> Shuvo Roy</a> 
-
-      </div> */}
-      {/* Always show copyright */}
       <div
         style={{
           marginTop: "32px",
@@ -403,7 +237,22 @@ function App() {
           fontSize: "0.95em",
         }}
       >
-        &copy; {new Date().getFullYear()} RUCSU Voter Search
+        &copy; {new Date().getFullYear()} RUCSU Voter Search &middot; Developed by{" "}
+        <a
+          href="https://www.linkedin.com/in/pipra1/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Habibur Rahman
+        </a>{" "}
+        &amp;{" "}
+        <a
+          href="https://www.linkedin.com/in/shuvo-roy-596814267/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Shuvo Roy
+        </a>
       </div>
     </div>
   );

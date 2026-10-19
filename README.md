@@ -1,16 +1,71 @@
-# React + Vite
+<div align="center">
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# RUCSU Voter Search
 
-Currently, two official plugins are available:
+### Find student voter information and polling-center details in seconds
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+A fast, responsive React application for looking up RUCSU voter information with a Student ID.
 
-## React Compiler
+<p>
+  <img src="./public/response.png" alt="RUCSU Voter Search showing student details and polling-center information" width="720">
+</p>
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+</div>
 
-## Expanding the ESLint configuration
+## Overview
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+**RUCSU Voter Search** connects to Firebase Realtime Database and presents a student's voter information in a clear, easy-to-read result card. Enter a valid Student ID to view the student's voter record, residence status, assigned hall, and polling center in both English and Bangla.
+
+## Features
+
+- Search voter records by Student ID
+- Retrieve data from Firebase Realtime Database
+- Show loading and validation states
+- Display:
+  - SL_RU
+  - Voter ID
+  - Student ID
+  - Name
+  - Department
+  - Residence status
+  - Hall name
+  - Polling-center name and location
+- Map hall codes to their full hall names
+- Show polling-center details in English and Bangla
+- Responsive interface with a modern gradient design
+- Press **Enter** to search from the Student ID field
+
+## Tech stack
+
+- [React](https://react.dev/) 19
+- [Vite](https://vite.dev/) 7
+- [Firebase Realtime Database](https://firebase.google.com/docs/database)
+- JavaScript (ES modules)
+- CSS
+
+
+
+## Project structure
+
+```text
+.
+├── public/
+│   └── response.png       # Application preview
+├── src/
+│   ├── App.jsx            # Search flow and voter details UI
+│   ├── App.css            # Application styling
+│   ├── index.css          # Global styles
+│   └── main.jsx           # React entry point
+├── firestore.js           # Firebase initialization
+├── index.html
+└── package.json
+```
+
+## Data flow
+
+1. The user enters a Student ID.
+2. The app reads the matching record from Firebase Realtime Database.
+3. The voter record is displayed with the corresponding hall and polling-center information.
+4. Missing or unavailable records are reported with an error message.
+
+
