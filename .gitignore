@@ -8,7 +8,7 @@ pnpm-debug.log*
 lerna-debug.log*
 
 # Firestore
-# firestore.js
+firestore.js
 
 node_modules
 dist
