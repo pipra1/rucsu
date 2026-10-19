@@ -104,9 +104,8 @@ The site will be available at
 │   ├── App.jsx            # Search flow and voter details UI
 │   ├── App.css            # Application styling
 │   ├── index.css          # Global styles
-│   └── main.jsx           # React entry point
-├── firestore.js           # Firebase initialization
+│   ├── main.jsx           # React entry point
+│   └── firebase.js        # Firebase initialization
 ├── index.html
 └── package.json
 ```
-

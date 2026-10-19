@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import "./App.css";
 import { get, ref } from "firebase/database";
-import { db } from "../firestore";
+import { db } from "./firebase";
 
 function App() {
   const [studentId, setStudentId] = useState("");
