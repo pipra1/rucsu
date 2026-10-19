@@ -2,38 +2,65 @@
 
 # RUCSU Voter Search
 
-### Find student voter information and polling-center details in seconds
+### A simpler way to find voter information for the RUCSU Election 2025
 
-A fast, responsive React application for looking up RUCSU voter information with a Student ID.
+Students at the University of Rajshahi can enter their Student ID to quickly find their voter information, assigned hall, and polling center without downloading and searching through large PDF voter lists.
+
+<table>
+  <tr>
+    <td align="center">
+      <img src="./public/mainPage.png" alt="RUCSU Voter Search main page" width="320">
+      <br>
+      <sub><strong>Main page</strong></sub>
+    </td>
+    <td align="center">
+      <img src="./public/studentDetails.png" alt="RUCSU Voter Search student details page" width="320">
+      <br>
+      <sub><strong>Student details</strong></sub>
+    </td>
+  </tr>
+</table>
 
 <p>
-  <img src="./public/response.png" alt="RUCSU Voter Search showing student details and polling-center information" width="720">
+  <strong>25,000+ successful searches in the first two days</strong>
 </p>
 
 </div>
 
-## Overview
+## About the project
 
-**RUCSU Voter Search** connects to Firebase Realtime Database and presents a student's voter information in a clear, easy-to-read result card. Enter a valid Student ID to view the student's voter record, residence status, assigned hall, and polling center in both English and Bangla.
+**RUCSU Voter Search** is a useful web app built for the **Rajshahi University Central Students Union (RUCSU) Election 2025**. It makes voter verification faster and more convenient by providing student-specific election information through a simple Student ID search.
+
+Instead of downloading a large voter-list PDF and manually searching through it, students can use this platform to get the information they need in seconds.
+
+## Impact
+
+The platform handled more than **25,000 successful searches within two days of going live**, helping students across the University of Rajshahi quickly find their voter information and reducing confusion around the election process.
+
+<div align="center">
+  <img src="./public/response.jpeg" alt="Firebase usage analytics for RUCSU Voter Search" width="680">
+  <br>
+  <sub>Firebase usage analytics after launch</sub>
+</div>
 
 ## Features
 
 - Search voter records by Student ID
-- Retrieve data from Firebase Realtime Database
-- Show loading and validation states
-- Display:
+- Retrieve records from Firebase Realtime Database
+- Display student and voter information, including:
   - SL_RU
   - Voter ID
   - Student ID
   - Name
   - Department
   - Residence status
-  - Hall name
-  - Polling-center name and location
-- Map hall codes to their full hall names
+  - Assigned hall
+  - Polling center
 - Show polling-center details in English and Bangla
-- Responsive interface with a modern gradient design
+- Map hall codes to full hall names
+- Provide loading, validation, and unavailable-record feedback
 - Press **Enter** to search from the Student ID field
+- Responsive interface with a clean, modern gradient design
 
 ## Tech stack
 
@@ -43,14 +70,21 @@ A fast, responsive React application for looking up RUCSU voter information with
 - JavaScript (ES modules)
 - CSS
 
+## How it works
 
+1. A student enters their Student ID.
+2. The app looks up the matching record in Firebase Realtime Database.
+3. The voter record is displayed with the student's hall and polling-center information.
+4. Hall codes are converted into full hall names, and polling-center information is shown in English and Bangla.
 
 ## Project structure
 
 ```text
 .
 ├── public/
-│   └── response.png       # Application preview
+│   ├── MainPage.jpeg      # Main-page preview
+│   ├── studentDetails.png # Student-details preview
+│   └── response.jpeg      # Firebase usage analytics
 ├── src/
 │   ├── App.jsx            # Search flow and voter details UI
 │   ├── App.css            # Application styling
@@ -60,12 +94,5 @@ A fast, responsive React application for looking up RUCSU voter information with
 ├── index.html
 └── package.json
 ```
-
-## Data flow
-
-1. The user enters a Student ID.
-2. The app reads the matching record from Firebase Realtime Database.
-3. The voter record is displayed with the corresponding hall and polling-center information.
-4. Missing or unavailable records are reported with an error message.
 
 
