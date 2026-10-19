@@ -70,6 +70,21 @@ The platform handled more than **25,000 successful searches within two days of g
 - JavaScript (ES modules)
 - CSS
 
+## Deploy to GitHub Pages
+
+This repository is configured to deploy automatically to GitHub Pages from the
+`main` branch using GitHub Actions.
+
+To enable the first deployment:
+
+1. Open the repository's **Settings → Pages**.
+2. Set **Source** to **GitHub Actions**.
+3. Push to `main`, or run the **Deploy to GitHub Pages** workflow manually from
+   the **Actions** tab.
+
+The site will be available at
+`https://pipra1.github.io/rucsu/`.
+
 ## How it works
 
 1. A student enters their Student ID.
@@ -94,5 +109,4 @@ The platform handled more than **25,000 successful searches within two days of g
 ├── index.html
 └── package.json
 ```
-
 
